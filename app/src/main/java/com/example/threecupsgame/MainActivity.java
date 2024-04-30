@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupListeners() {
         startButton.setOnClickListener(v -> shuffleCups());
     }
-//testing comment
+//testing comment again
     private void shuffleCups() {
         Collections.shuffle(cups);
         for (ImageView cup : cups) {
