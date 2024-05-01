@@ -1,40 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/cup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup1"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
+        android:layout_toLeftOf="@id/cup2"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp" />
 
     <ImageView
         android:id="@+id/cup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup2"
-        android:layout_toRightOf="@id/cup1"
-        android:layout_margin="10dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
+        android:layout_centerInParent="true" />
 
     <ImageView
         android:id="@+id/cup3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
         android:layout_toRightOf="@id/cup2"
-        android:layout_margin="10dp"/>
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp" />
+
+    <ImageView
+        android:id="@+id/ball"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ball"
+        android:layout_below="@id/cup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ball"
         android:text="Start Game"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/cup1"
         android:layout_marginTop="20dp"/>
-
 </RelativeLayout>
