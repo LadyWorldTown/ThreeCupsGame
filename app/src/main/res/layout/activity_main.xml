@@ -39,12 +39,41 @@
         android:layout_marginTop="10dp"
         android:visibility="invisible" />
 
+    <!-- Difficulty Buttons aligned above the Start Button -->
+    <Button
+        android:id="@+id/buttonEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Easy"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toStartOf="@id/buttonStart"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/buttonMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toEndOf="@id/buttonEasy"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/buttonHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hard"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toEndOf="@id/buttonMedium"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Start Game Button -->
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/ball"
+        android:layout_centerVertical="true"
         android:text="Start Game"
-        android:layout_marginTop="20dp"/>
+        android:enabled="false" /> <!-- Initially disabled -->
 </RelativeLayout>
