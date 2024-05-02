@@ -1,40 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/cup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup1"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
+        android:layout_toLeftOf="@id/cup2"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp" />
 
     <ImageView
         android:id="@+id/cup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup2"
-        android:layout_toRightOf="@id/cup1"
-        android:layout_margin="10dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
+        android:layout_centerInParent="true" />
 
     <ImageView
         android:id="@+id/cup3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/red_cup"
+        android:layout_toRightOf="@id/cup2"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp" />
+
+    <ImageView
+        android:id="@+id/ball"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ball"
+        android:layout_below="@id/cup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+    <!-- Difficulty Buttons aligned above the Start Button -->
+    <Button
+        android:id="@+id/buttonEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/cup3"
-        android:layout_toRightOf="@id/cup2"
-        android:layout_margin="10dp"/>
+        android:text="Easy"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toStartOf="@id/buttonStart"
+        android:layout_marginBottom="10dp" />
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/buttonMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Game"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/cup1"
-        android:layout_marginTop="20dp"/>
+        android:text="Medium"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toEndOf="@id/buttonEasy"
+        android:layout_marginBottom="10dp" />
 
+    <Button
+        android:id="@+id/buttonHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hard"
+        android:layout_above="@+id/buttonStart"
+        android:layout_toEndOf="@id/buttonMedium"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Start Game Button -->
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Start Game"
+        android:enabled="false" /> <!-- Initially disabled -->
 </RelativeLayout>
