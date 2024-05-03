@@ -1,6 +1,8 @@
 package com.example.threecupsgame;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -196,14 +198,20 @@ public class MainActivity extends AppCompatActivity {
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                if (cups.indexOf(cup) == ballCupIndex) {
-                    ball.setVisibility(View.VISIBLE);
-                    Toast.makeText(MainActivity.this, "You won!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Try again!", Toast.LENGTH_SHORT).show();
-                }
-                startButton.setVisibility(View.VISIBLE); // Show start button for replay
-                showEndGameOptions(); // Ask the user if they want to change difficulty or play again
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Check if the selected cup is the one with the ball
+                        if (cups.indexOf(cup) == ballCupIndex) {
+                            ball.setVisibility(View.VISIBLE);
+                            Toast.makeText(MainActivity.this, "You won!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Try again!", Toast.LENGTH_SHORT).show();
+                        }
+                        startButton.setVisibility(View.VISIBLE); // Show start button for replay
+                        showEndGameOptions(); // Ask the user if they want to change difficulty or play again
+                    }
+                }, 500); // Delay of 500 milliseconds
             }
         });
         animator.start();
